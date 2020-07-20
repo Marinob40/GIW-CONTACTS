@@ -88,7 +88,6 @@ namespace GIW
             }
         }
 
-        //adding a comment
         private void transferContactsSQL_Clicked(object sender, EventArgs e)
         {
             try
