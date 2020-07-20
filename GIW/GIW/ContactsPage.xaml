@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="White"
+             x:Class="GIW.ContactsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="GIWIcon" 
+                     IconImageSource="ic_giw_jpg_web.png"
+                     Order="Primary"
+                     ></ToolbarItem>
+        <ToolbarItem x:Name="DeleteAll"
+                     Text="DELETE ALL"
+                     Clicked="DeleteAll_Clicked"></ToolbarItem>
+        <ToolbarItem Text="+"
+                     Clicked="NewContactToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <SearchBar x:Name="contactSearchBar" 
+                   TextChanged="SearchBar_TextChanged"></SearchBar>
+        <ListView x:Name="contactsListView"
+                  ItemSelected="contactsListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding FormattedText} "
+                     TextColor="Blue"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ActivityIndicator x:Name="actIndTransferContactsSQL" 
+                           Color="Gray" 
+                           VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="CenterAndExpand" />
+        <Button x:Name="transferContactsSQL" Text="Transfer Contacts to SQL Server" Padding="5, 5, 5, 5" Clicked="transferContactsSQL_Clicked"></Button>
+    </StackLayout>
+</ContentPage>
