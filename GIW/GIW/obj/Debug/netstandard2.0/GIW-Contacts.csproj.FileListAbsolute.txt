@@ -2,6 +2,7 @@ C:\GIW_CONTACTS\GIW\GIW\bin\Debug\netstandard2.0\GIW-Contacts.deps.json
 C:\GIW_CONTACTS\GIW\GIW\bin\Debug\netstandard2.0\GIW-Contacts.dll
 C:\GIW_CONTACTS\GIW\GIW\bin\Debug\netstandard2.0\ref\GIW-Contacts.dll
 C:\GIW_CONTACTS\GIW\GIW\bin\Debug\netstandard2.0\GIW-Contacts.pdb
+C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\GIW-Contacts.csprojAssemblyReference.cache
 C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\ContactDetailPage.xaml.g.cs
 C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\ContactsPage.xaml.g.cs
@@ -13,4 +14,3 @@ C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\XamlC.stamp
 C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\GIW-Contacts.dll
 C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\ref\GIW-Contacts.dll
 C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\GIW-Contacts.pdb
-C:\GIW_CONTACTS\GIW\GIW\obj\Debug\netstandard2.0\GIW-Contacts.csprojAssemblyReference.cache

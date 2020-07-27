@@ -52,6 +52,8 @@ namespace GIW.Classes
             set;
         }
 
+        //This will format and display the contact information such as first name, last name,
+        //company name, phone number, and date added in the contacts listview
         public string FormattedText
         {
             get
