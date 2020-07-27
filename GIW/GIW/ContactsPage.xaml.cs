@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MySql.Data.MySqlClient;
 
 namespace GIW
 {
@@ -14,6 +15,7 @@ namespace GIW
     {
         public ContactsPage()
         {
+            //Creates listview of contacts in local SQLite database
             InitializeComponent();
             using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
             {
@@ -23,6 +25,8 @@ namespace GIW
                 contactsListView.ItemsSource = contacts;
             }
         }
+
+        //Displays listview of contacts in SQLite database
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -40,11 +44,13 @@ namespace GIW
 
         }
 
+        //Click this button to add a new contact
         private void NewContactToolbarItem_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new MainPage());
         }
 
+        //Select a contact in the contact listview and open up the contact detail page
         public void contactsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var selectedContact = contactsListView.SelectedItem as Contact;
@@ -55,6 +61,7 @@ namespace GIW
             }
         }
 
+        //Search contacts listview by first name, last name, company name, or date added
         void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(e.NewTextValue))
@@ -88,6 +95,7 @@ namespace GIW
             }
         }
 
+        //This button will transfer all contacts in the contacts listview to AWS instance of SQL Server
         private void transferContactsSQL_Clicked(object sender, EventArgs e)
         {
             try
@@ -149,6 +157,7 @@ namespace GIW
 
         }
 
+        //Click to delete all contacts in contacts listview
         private async void DeleteAll_Clicked(object sender, EventArgs e)
         {
             using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))

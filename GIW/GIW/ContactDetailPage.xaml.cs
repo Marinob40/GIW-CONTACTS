@@ -20,6 +20,7 @@ namespace GIW
         {
             InitializeComponent();
 
+            //Creates items to add to product, sales territory, and US region pickers
             List<string> productPickerStrings = new List<string>();
 
             ProductPicker.Items.Add("LCC");
@@ -50,6 +51,7 @@ namespace GIW
             UsPicker.Items.Add("South");
             UsPicker.Items.Add("Florida");
 
+            //Pulls the form info for the selected contact and displays to be edited
             this.selectedContact = selectedContact;
 
             firstNameEntry.Text = selectedContact.FirstName;
@@ -66,6 +68,7 @@ namespace GIW
             quarterlyNewsletterChkbx.IsChecked = selectedContact.QrtlyNewsltrChkBox;
         }
 
+        //Click this button to update contact with any edited information in the contact details page
         private void updateButton_Clicked(object sender, EventArgs e)
         {
             selectedContact.FirstName = firstNameEntry.Text;
@@ -100,6 +103,7 @@ namespace GIW
 
         }
 
+        //Click this button to delete contact
         private async void deleteButton_Clicked(object sender, EventArgs e)
         {
             using (SQLiteConnection conn = new SQLiteConnection(App.FilePath))
@@ -129,11 +133,13 @@ namespace GIW
             }
         }
 
+        //This will take user back to Contacts listview
         private void ContactsLink_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ContactsPage());
         }
 
+        //Sets value for product picker
         private void ProductPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ProductPicker.SelectedIndex != -1)
@@ -143,6 +149,7 @@ namespace GIW
 
         }
 
+        //Sets value for sales territory picker
         private void SalesTerritoryPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (SalesTerritoryPicker.SelectedIndex != -1)
@@ -165,6 +172,7 @@ namespace GIW
             }
         }
 
+        //Sets value for US picker
         private void UsPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (UsPicker.SelectedIndex != -1)

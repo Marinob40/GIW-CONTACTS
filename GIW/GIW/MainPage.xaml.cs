@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using GIW.Classes;
 using SQLite;
 using System.Text.RegularExpressions;
-using System.Windows.Input;
 using Xamarin.Essentials;
 
 namespace GIW
@@ -22,6 +17,8 @@ namespace GIW
         {
             InitializeComponent();
 
+
+            //Creates the items for the product, sales territory, and USregion pickers
             ProductPicker.Items.Add("LCC");
             ProductPicker.Items.Add("LCV");
             ProductPicker.Items.Add("LSA");
@@ -51,6 +48,7 @@ namespace GIW
             UsPicker.Items.Add("Florida");
         }
 
+        //Creates a contact and inserts into local SQLIte database
         private void submitButton_Clicked(object sender, EventArgs e)
         {
 
@@ -173,12 +171,13 @@ namespace GIW
             }
         }
 
+        //Takes user to contacts listview
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ContactsPage());
         }
 
-
+        //Link takes user to products page on KSB's website
         public async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             string url = "https://products.ksb.com/global/";
@@ -186,6 +185,7 @@ namespace GIW
             await Browser.OpenAsync(new Uri(url), BrowserLaunchMode.SystemPreferred);
         }
 
+        //Link takes user to KSB's privacy policy
         private async void TapGestureRecognizer_Tapped_Privacy_Policy(object sender, EventArgs e)
         {
             string url = "https://www.ksb.com/ksb-en/legal-information/data-privacy/";
@@ -193,6 +193,7 @@ namespace GIW
             await Browser.OpenAsync(new Uri(url), BrowserLaunchMode.SystemPreferred);
         }
 
+        //Sets the product picker item
         private void ProductPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ProductPicker.SelectedIndex != -1)
@@ -201,6 +202,7 @@ namespace GIW
             }
         }
 
+        //Sets the sales territory picker item
         public void SalesTerritoryPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (SalesTerritoryPicker.SelectedIndex != -1)
@@ -223,6 +225,7 @@ namespace GIW
             }
         }
 
+        //Sets the US picker item
         private void UsPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (UsPicker.SelectedIndex != -1)
@@ -231,6 +234,7 @@ namespace GIW
             }
         }
 
+        //Will clear all contact form fields if clicked
         private void Clear_All_Clicked(object sender, EventArgs e)
         {
             firstNameEntry.Text = "";
