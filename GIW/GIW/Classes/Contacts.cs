@@ -5,6 +5,7 @@ using SQLite;
 
 namespace GIW.Classes
 {
+    //This class is used to create a contact
     public class Contact
     {
         [PrimaryKey, AutoIncrement]
