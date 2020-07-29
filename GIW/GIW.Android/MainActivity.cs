@@ -14,6 +14,7 @@ namespace GIW.Droid
     [Activity(Label = "GIW-Contacts", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        //This creates the layout and creates the local SQLite database
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -30,6 +31,8 @@ namespace GIW.Droid
 
             LoadApplication(new App(completePath));
         }
+
+        //This interface is the contract for receiving the results for permission requests
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
