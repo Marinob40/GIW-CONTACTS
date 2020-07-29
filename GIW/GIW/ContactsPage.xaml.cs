@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using MySql.Data.MySqlClient;
 
 namespace GIW
 {
